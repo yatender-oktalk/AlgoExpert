@@ -19,8 +19,11 @@ func main() {
 	l.Insert(14)
 	l.Insert(24)
 	l.Insert(44)
+	l.Insert(45)
+	l.InsertAt(3, 34)
+	l.InsertAt(9, 41)
+	l.Print()
 	fmt.Println("\n************* Print *************")
-	fmt.Println(l.Sum())
 }
 
 func (l *LinkedList) Insert(v int) {
@@ -57,6 +60,7 @@ func (l *LinkedList) Print() {
 	fmt.Println(ptr.value)
 }
 
+// This function Provides the Sum of all elements of linked list
 func (l *LinkedList) Sum() int {
 	ptr := l.head
 	sum := 0
@@ -66,4 +70,23 @@ func (l *LinkedList) Sum() int {
 		ptr = ptr.next
 	}
 	return sum
+}
+
+// Insert element at nth position
+func (l *LinkedList) InsertAt(n, value int) {
+	fmt.Println(l.len)
+	if l.len+1 < n {
+		return
+	}
+
+	ptr := l.head
+
+	// Push pointer to just 1 step before where you want it to insert
+	for i := 1; i < n-1; i++ {
+		ptr = ptr.next
+	}
+
+	node := Node{value: value, next: ptr.next}
+	ptr.next = &node
+	l.len++
 }
