@@ -1,9 +1,5 @@
 package array_algo
 
-import "fmt"
-
-var arr []int = []int{5, 1, 4, 2}
-
 func ArrayProduct(arr []int) []int {
 	// Final Product array
 
