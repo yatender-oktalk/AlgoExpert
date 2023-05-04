@@ -1,12 +1,8 @@
-package main
+package array_algo
 
 import "fmt"
 
 var arr []int = []int{5, 1, 4, 2}
-
-func main() {
-	fmt.Println(ArrayProduct(arr))
-}
 
 func ArrayProduct(arr []int) []int {
 	// Final Product array
